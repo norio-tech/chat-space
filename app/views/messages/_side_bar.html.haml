@@ -1,0 +1,20 @@
+.side
+  .side_header
+    .side_header__box
+      .side_header__box--user_name
+        fuka
+      .side_header__box--icons
+        = link_to "#",class: "side_header__box--icons_edit" do
+          =icon("fa","edit",class: "btn_edit")
+        = link_to "#",class: "side_header__box--icons_cog" do
+          =icon("fa","cog",class: "btn_cog")
+          
+
+    
+  .side_groups
+    .group
+      %p.group_name テックキャンプ
+      %p.group_message まだメッセージがありません
+    .group
+      %p.group_name テックキャンプ2
+      %p.group_message まだメッセージがありません
