@@ -4,7 +4,7 @@
       .side_header__box--user_name
         = current_user.name
       .side_header__box--icons
-        = link_to "#",class: "side_header__box--icons_edit" do
+        = link_to new_group_path,class: "side_header__box--icons_edit" do
           =icon("fa","edit",class: "btn_edit")
         = link_to edit_user_path(current_user.id),class: "side_header__box--icons_cog" do
           =icon("fa","cog",class: "btn_cog")
@@ -12,9 +12,7 @@
 
     
   .side_groups
-    .group
-      %p.group_name テックキャンプ
-      %p.group_message まだメッセージがありません
-    .group
-      %p.group_name テックキャンプ2
-      %p.group_message まだメッセージがありません
+    - current_user.groups.each do | group |
+      .group
+        %p= group.name
+        %p.group_message まだメッセージがありません
