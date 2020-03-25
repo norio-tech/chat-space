@@ -55,6 +55,9 @@ $btn_color: #38aef0;
     background-color:#2f3e51;
     height:calc(100% - 100px);
     padding:20px;
+    a {
+      text-decoration:none;
+    }
   }
 }
 .group{
@@ -88,6 +91,13 @@ $btn_color: #38aef0;
         margin-top:15px;
         font-size:12px;
         color:#999;
+        display:flex;
+        ul{
+          li{
+            display:inline-block;
+            margin-left:5px; 
+          }
+        }
       }
     }
     &__right_box{
@@ -135,35 +145,40 @@ $btn_color: #38aef0;
     @include flex_center();
     background-color:#d2d2d2;
     height:90px;
-    .form{
-      display:flex;
-      background-color:#fff;
+    .new_message{
       height:50px;
       margin-left:40px;
-      width:calc(100% - 200px);
-      position:relative;
-      &__input{
-        border:none;
-        width:100%;
-        padding-left:10px;
-        padding-right:40px;
-      }
-      &__image{
-        position:absolute;
-        right:10px;
-        line-height:50px;
-        font-size:21px;
-        input{
-          display:none;
+      width:100%;
+      display:flex;
+      .form{
+        background-color:#fff;
+        width:calc(100% - 200px);
+        height:100%;
+        position:relative;
+        &__input{
+          border:none;
+          width:100%;
+          padding-left:10px;
+          padding-right:40px;
+          line-height:50px;
+        }
+        &__image{
+          position:absolute;
+          right:10px;
+          line-height:50px;
+          font-size:21px;
+          input{
+            display:none;
+          }
         }
       }
-    }
-    .send_btn{
-      margin-left:15px;
-      background-color:$btn_color;
-      width:100px;
-      height:50px;
-      color:#fff;
+      .send_btn{
+        margin-left:15px;
+        background-color:$btn_color;
+        width:100px;
+        height:50px;
+        color:#fff;
+      }
     }
   }
 }

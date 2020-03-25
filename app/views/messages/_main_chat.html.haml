@@ -2,43 +2,25 @@
   .group_info
     .group_info__left_box
       %p.group_info__left_box--name
-        テックキャンプ
-      %p.group_info__left_box--member
-        member:norio
+        =@group.name
+      .group_info__left_box--member
+        %ul
+          Member :
+          -@group.users.each do | group_user |
+            %li
+              =group_user.name
     .group_info__right_box
-      = link_to "#",class: "btn-edit" do
+      = link_to edit_group_path(@group.id),class: "btn-edit" do
         Edit
   .message_list
-    .message
-      .message__header
-        %p.message__header--name
-          norio
-        %p.message__header--date
-          20200101 00:00
-      .message__main
-        今日もいい天気だ
-    .message
-      .message__header
-        %p.message__header--name
-          aiueo
-        %p.message__header--date
-          20200101 00:00
-      .message__main
-        いいや曇りだ
-    .message
-      .message__header
-        %p.message__header--name
-          norio
-        %p.message__header--date
-          20200101 00:00
-      .message__main
-        晴れてます
+    =render @messages
   .message_form
-    .form
-      %input.form__input{name: "form" ,placeholder: "type a message",type: "text"}
-      %label.form__image
-        = icon('far', 'image')
-        %input{type: "file"}
-    %input.send_btn{type:"submit",value:"Send"}
-      
+    =form_for [@group,@message]  do | f | 
+      .form
+        =f.text_field :content ,placeholder: "type a message",class:"form__input"
+        %label.form__image
+          = icon('far', 'image')
+          =f.file_field :image 
+      =f.submit "Send",class: "send_btn"
+    
 

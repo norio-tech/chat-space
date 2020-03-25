@@ -1,0 +1,9 @@
+
+.message
+  .message__header
+    %p.message__header--name
+      =message.user.name
+    %p.message__header--date
+      =message.created_at
+  .message__main
+    =message.content
