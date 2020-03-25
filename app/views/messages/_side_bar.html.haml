@@ -13,6 +13,8 @@
     
   .side_groups
     - current_user.groups.each do | group |
-      .group
-        %p= group.name
-        %p.group_message まだメッセージがありません
+      =link_to group_messages_path(group.id) do
+        .group
+          %p= group.name
+          %p.group_message
+            =group.show_last_message

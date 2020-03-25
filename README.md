@@ -35,7 +35,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|body|text||
+|content|text||
 |image|string||
 |group_id|integer|null: false|
 |user_id|integer|null: false|
