@@ -119,6 +119,7 @@ $btn_color: #38aef0;
     height:calc(100vh - 190px);
     padding-top:35px;
     padding-left:40px;
+    overflow: scroll;
     .message{
       &__header{
         display:flex;
