@@ -24,9 +24,6 @@ $(function(){
     }
     return html
   }
-  function always(){
-
-  }
   $("#input-form").on("submit",function(e){
     e.preventDefault()
     var input_message = $("#message_content").val();
