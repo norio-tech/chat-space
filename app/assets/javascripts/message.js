@@ -24,6 +24,9 @@ $(function(){
     }
     return html
   }
+  function always(){
+
+  }
   $("#input-form").on("submit",function(e){
     e.preventDefault()
     var input_message = $("#message_content").val();
@@ -44,10 +47,11 @@ $(function(){
         $(".message_list").append(html);
         $("#input-form")[0].reset();
         $('.message_list').animate({ scrollTop: $('.message_list')[0].scrollHeight});
-        $(".send_btn").prop("disabled",false);
       })
       .fail(function() {
         alert("メッセージ送信に失敗しました");
+      })
+      .always(function(){
         $(".send_btn").prop("disabled",false);
       });
     } else {
