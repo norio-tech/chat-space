@@ -7,3 +7,4 @@
       =message.created_at
   .message__main
     =message.content
+  =image_tag(message.image) unless message.image.blank?

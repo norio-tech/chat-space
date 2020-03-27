@@ -15,12 +15,11 @@
   .message_list
     =render @messages
   .message_form
-    =form_for [@group,@message]  do | f | 
+    =form_for [@group,@message],html:{id: "input-form"}  do | f | 
       .form
         =f.text_field :content ,placeholder: "type a message",class:"form__input"
         %label.form__image
           = icon('far', 'image')
           =f.file_field :image 
       =f.submit "Send",class: "send_btn"
-    
 
