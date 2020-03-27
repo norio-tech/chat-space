@@ -1,6 +1,5 @@
 $(function(){
   function buildHTML(message){
-    // 「もしメッセージに画像が含まれていたら」という条件式
     if (message.image) {
       var html = `
         <div class="message">
@@ -11,7 +10,7 @@ $(function(){
           <div class="message__main">${message.content}</div>
           <img src=${message.image}>
         </div>        
-      `//メッセージに画像が含まれる場合のHTMLを作る
+      `
     } else {
       var html = `
         <div class="message">
@@ -21,7 +20,7 @@ $(function(){
           </div>
           <div class="message__main">${message.content}</div>
         </div>
-      `//メッセージに画像が含まれない場合のHTMLを作る``
+      `
     }
     return html
   }
@@ -33,8 +32,8 @@ $(function(){
       var formData = new FormData(this);
       var url = $(this).attr('action');
       $.ajax({
-        url: url,  //同期通信でいう『パス』
-        type: 'POST',  //同期通信でいう『HTTPメソッド』
+        url: url,
+        type: 'POST',
         data: formData,  
         dataType: 'json',
         processData: false,
@@ -53,9 +52,6 @@ $(function(){
       });
     } else {
       alert("メッセージを入力してください");
-      // 処理が終わった後に、disabled true になってしまう為、
-      // return false で強制的に返す
-      //$(".send_btn").prop("disabled",false);
       return false;
     }
   })
